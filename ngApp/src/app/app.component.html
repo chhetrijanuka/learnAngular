@@ -13,7 +13,7 @@
     </div><!-- card -->
   </div><!-- row -->
 
-
+  <app-artist-items></app-artist-items>
     <div class="row justify-content-center mt-3">
       <div class="col-md-8">
         <div class="d-flex flex-row  mb-2 borderleft" *ngFor="let artist of artists" (click)="showArtist(artist)" [style.backgroundColor]="artist.highlight ? '#eee' : '#fff'">
@@ -29,10 +29,9 @@
       </div><!-- col -->
     </div><!-- row -->
 
-
   </div><!-- container -->
 
-
+  
 
 
 <router-outlet></router-outlet>

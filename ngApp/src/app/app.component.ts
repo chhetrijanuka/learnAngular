@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
   constructor( private http : HttpClient) {
     this.query = '';
   }
-  ngOnInit() {
+  ngOnInit(): void {
     this.http.get<object>('./assets/data.json').subscribe(
       data => {
         this.artists = data;

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  query: string;
+  query: string="";
   artists: object;
 
 

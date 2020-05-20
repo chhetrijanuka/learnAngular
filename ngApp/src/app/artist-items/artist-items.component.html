@@ -1,1 +1,11 @@
-<h2 class="text-warning text-center">welcome to sub component</h2>
+<h6 class="text-center text-warning">Data is coming from parent component</h6>
+     <div class="d-flex flex-row  mb-2 borderleft" *ngFor="let artist of parentToChild" (click)="showArtist(artist)" [style.backgroundColor]="artist.highlight ? '#eee' : '#fff'">
+          <div>
+            <h6 class="ml-2">{{ artist.name }}</h6>
+            <p class="ml-2"> {{ artist.reknown }}</p>
+          </div>
+          <div style="height: 50px; width: 70px;" class="ml-auto">
+            <img [src]="artist.image" alt="media img" style="height: 67px; width: 70px;">
+          </div>
+         
+        </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-artist-items',
@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
  
 })
 export class ArtistItemsComponent implements OnInit {
-
+  @Input()
+  parentToChild:object;
+  query: string="";
   constructor() { }
+
+  showArtist(item) {
+    this.query = item.name;
+    item.highlight = !item.highlight;
+  }
 
   ngOnInit(): void {
   }

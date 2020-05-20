@@ -4,29 +4,23 @@
       <div class="card-body">
         <h3 class="mb-0">Artist Directory</h3>
         <div class="form-group">
-          <div class="form-label" *ngIf="query"><strong>For:</strong>
-            {{ query }}
+          <div class="form-label" ><strong>For:</strong>
+           
           </div>
-          <input class="form-control mt-2" type="text" [(ngModel)]="query">
+          <input class="form-control mt-2" type="text" >
         </div><!-- form-group -->
       </div><!-- card-body -->
     </div><!-- card -->
   </div><!-- row -->
 
-  <app-artist-items></app-artist-items>
+  
     <div class="row justify-content-center mt-3">
       <div class="col-md-8">
-        <div class="d-flex flex-row  mb-2 borderleft" *ngFor="let artist of artists | listSearch:query" (click)="showArtist(artist)" [style.backgroundColor]="artist.highlight ? '#eee' : '#fff'">
-          <div>
-            <h6 class="ml-2">{{ artist.name }}</h6>
-            <p class="ml-2"> {{ artist.reknown }}</p>
-          </div>
-          <div style="height: 50px; width: 70px;" class="ml-auto">
-            <img [src]="artist.image" alt="media img" style="height: 67px; width: 70px;">
-          </div>
-        </div>
+   
+        <app-artist-items [parentToChild]="artists"></app-artist-items>
        
       </div><!-- col -->
+     
     </div><!-- row -->
 
   </div><!-- container -->

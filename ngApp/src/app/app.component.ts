@@ -6,16 +6,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  query: string="";
+  
   artists: object;
 
 
-  showArtist(item) {
-    this.query = item.name;
-    item.highlight = !item.highlight;
-  }
+
   constructor( private http : HttpClient) {
-    this.query = '';
+    // this.query = '';
   }
   ngOnInit(): void {
     this.http.get<object>('./assets/data.json').subscribe(
